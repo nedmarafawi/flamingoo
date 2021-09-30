@@ -26,6 +26,7 @@ const Upload = () => {
 
     setLoading(true);
 
+    // First fetch
     const res = await fetch(
       'https://api.cloudinary.com/v1_1/nedmarafawi/image/upload',
       {
@@ -35,8 +36,21 @@ const Upload = () => {
     );
 
     const file = await res.json();
-    console.log(file);
+
+    // Call endpoint to post this file and save it to MongoDB
+    // db.collections("files").insertOne(file) on MongoDB
+
+    // Second fetch
+    const response = await fetch('/upload', {
+      method: 'POST',
+      body: JSON.stringify({ data: file }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const uploadFile = await response.json();
+    console.log(JSON.stringify(file));
+    // console.log(file);
     setImage(file.secure_url);
+    // setImage(uploadFile.secure_url);
     setLoading(false);
   };
 

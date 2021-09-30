@@ -36,8 +36,8 @@ const Map = () => {
   const [rating, setRating] = useState(0);
 
   const [viewport, setViewport] = useState({
-    width: '50vw',
-    height: '50vh',
+    width: '70vw',
+    height: '70vh',
     latitude: 54,
     longitude: -105,
     zoom: 4,
@@ -119,19 +119,19 @@ const Map = () => {
   return (
     <div className="App">
       {currentUser && (
-        <nav className="nav">
-          {/* <Link to="/" style={{ textDecoration: 'none' }}>
-            <div className="nav-brand">Travel Map</div>
-          </Link> */}
+        <div>
+          {/* <nav className="nav"> */}
+
           <ul className="nav-items">
             <li className="nav-item">
-              {/* <Link to="/profile">Profile</Link> */}
+              <Link to="/profile">Profile</Link>
             </li>
             <li className="nav-item">
               <Link to="/upload">Upload</Link>
             </li>
           </ul>
-        </nav>
+          {/* </nav> */}
+        </div>
       )}
       <ReactMapGL
         {...viewport}
