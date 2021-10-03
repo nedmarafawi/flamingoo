@@ -1,34 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import { Room, Star } from '@material-ui/icons';
 
-import './app.css';
+import styled from 'styled-components';
 
 import axios from 'axios';
 
 import { format } from 'timeago.js';
 
-import Register from './components/Register';
-import Login from './components/Login';
+import { Context } from './context/Context';
 
 import { Link } from 'react-router-dom';
 
-import Profile from './components/pages/Profile';
-
 const Map = () => {
   // Local Storage
-  const localStorage = window.localStorage;
+  // const localStorage = window.localStorage;
 
-  const [currentUser, setCurrentUser] = useState(localStorage.getItem('user'));
+  // const [currentUser, setCurrentUser] = useState(localStorage.getItem('user'));
 
   const [pins, setPins] = useState([]);
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
   const [newPlace, setNewPlace] = useState(null);
 
-  // Register form
-  const [showRegister, setShowRegister] = useState(false);
-  // Login form
-  const [showLogin, setShowLogin] = useState(false);
+  const { user } = useContext(Context);
 
   // Form
   const [title, setTitle] = useState(null);
@@ -36,12 +30,11 @@ const Map = () => {
   const [rating, setRating] = useState(0);
 
   const [viewport, setViewport] = useState({
-    width: '70vw',
+    width: '100vw',
     height: '70vh',
     latitude: 54,
     longitude: -105,
     zoom: 4,
-    borderRadius: '50px',
   });
 
   /*
@@ -90,7 +83,7 @@ const Map = () => {
     e.preventDefault();
 
     const newPin = {
-      username: currentUser,
+      username: user.username,
       title,
       desc,
       rating,
@@ -100,7 +93,6 @@ const Map = () => {
 
     try {
       const res = await axios.post('/pins', newPin);
-      // "proxy": "http://localhost:3000/api"
       // Adding inside the map
       setPins([...pins, res.data]);
 
@@ -111,28 +103,8 @@ const Map = () => {
     }
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem('user');
-    setCurrentUser(null);
-  };
-
   return (
-    <div className="App">
-      {currentUser && (
-        <div>
-          {/* <nav className="nav"> */}
-
-          <ul className="nav-items">
-            <li className="nav-item">
-              <Link to="/profile">Profile</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/upload">Upload</Link>
-            </li>
-          </ul>
-          {/* </nav> */}
-        </div>
-      )}
+    <FirstWrapper className="App">
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
@@ -152,7 +124,7 @@ const Map = () => {
               <Room
                 style={{
                   fontSize: viewport.zoom * 7,
-                  color: p.username === currentUser ? 'blue' : 'red',
+                  color: p.username === p.username ? 'blue' : 'red',
                   cursor: 'pointer',
                 }}
                 onClick={() => handleMarkerClick(p._id, p.lat, p.long)}
@@ -167,21 +139,25 @@ const Map = () => {
                 onClose={() => setCurrentPlaceId(null)}
                 anchor="top"
               >
-                <div className="card">
-                  <label>Place</label>
-                  <h4 className="place">{p.title}</h4>
-                  <label>Review</label>
-                  <p className="des">{p.des}</p>
-                  <label>Rating</label>
-                  <div className="stars">
+                <Card className="card">
+                  <PlaceLabel>Place</PlaceLabel>
+                  <PlaceTitle className="place">{p.title}</PlaceTitle>
+                  <ReviewLabel>Review</ReviewLabel>
+                  <ReviewDesc className="des">{p.des}</ReviewDesc>
+                  <RatingLabel>Rating</RatingLabel>
+                  <Stars className="stars">
                     {Array(p.rating).fill(<Star className="star" />)}
-                  </div>
-                  <label>Information</label>
-                  <span className="username">
-                    Created by <b>{p.username}</b>
-                  </span>
-                  <span className="date">{format(p.createdAt)}</span>
-                </div>
+                  </Stars>
+                  <InfoLabel>Information</InfoLabel>
+                  <CardUsername className="username">
+                    {/* Created by <b>{p.username}</b> */}
+                    Created by
+                    <Link to={`/?user=${p.username}`} className="link">
+                      <b>{p.username}</b>
+                    </Link>
+                  </CardUsername>
+                  <CardDate className="date">{format(p.createdAt)}</CardDate>
+                </Card>
               </Popup>
             )}
           </>
@@ -196,19 +172,19 @@ const Map = () => {
             anchor="top"
             onClose={() => setNewPlace(null)}
           >
-            <div>
-              <form onSubmit={handleSubmit}>
-                <label>Title</label>
+            <SecondWrapper>
+              <FormContainer onSubmit={handleSubmit}>
+                <TitleLabel>Title</TitleLabel>
                 <input
                   placeholder="Enter a title"
                   onChange={(e) => setTitle(e.target.value)}
                 />
-                <label>Review</label>
-                <textarea
+                <ReviewLabel>Review</ReviewLabel>
+                <ReviewText
                   placeholder="Say something about this place."
                   onChange={(e) => setDesc(e.target.value)}
                 />
-                <label>Rating</label>
+                <RatingLabel>Rating</RatingLabel>
                 <select onChange={(e) => setRating(e.target.value)}>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -216,42 +192,116 @@ const Map = () => {
                   <option value="4">4</option>
                   <option value="5">5</option>
                 </select>
-                <button type="submit" className="submitButton">
+                <Button type="submit" className="submitButton">
                   Add Pin
-                </button>
-              </form>
-            </div>
+                </Button>
+              </FormContainer>
+            </SecondWrapper>
           </Popup>
         )}
       </ReactMapGL>
-
-      {currentUser ? (
-        <button className="button logout" onClick={handleLogout}>
-          Log out
-        </button>
-      ) : (
-        <div className="buttons">
-          <button className="button login" onClick={() => setShowLogin(true)}>
-            Login
-          </button>
-          <button
-            className="button register"
-            onClick={() => setShowRegister(true)}
-          >
-            Register
-          </button>
-        </div>
-      )}
-      {showRegister && <Register setShowRegister={setShowRegister} />}
-      {showLogin && (
-        <Login
-          setShowLogin={setShowLogin}
-          localStorage={localStorage}
-          setCurrentUser={setCurrentUser}
-        />
-      )}
-    </div>
+    </FirstWrapper>
   );
 };
 
 export default Map;
+
+const FirstWrapper = styled.div`
+  border-radius: 10px;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+`;
+// margin-left: 2px;
+// margin-right: 555px;
+
+const Card = styled.div`
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;
+
+const PlaceLabel = styled.p`
+  width: max-content;
+  color: blue;
+  font-size: 13px;
+  border-bottom: 0.5px solid blue;
+  margin: 3px 0;
+`;
+
+const PlaceTitle = styled.h4``;
+
+const ReviewLabel = styled.p`
+  width: max-content;
+  color: blue;
+  font-size: 13px;
+  border-bottom: 0.5px solid blue;
+  margin: 3px 0;
+`;
+
+const ReviewDesc = styled.p`
+  width: max-content;
+  color: blue;
+  font-size: 13px;
+  border-bottom: 0.5px solid blue;
+  margin: 3px 0;
+`;
+
+const RatingLabel = styled.p`
+  width: max-content;
+  color: blue;
+  font-size: 13px;
+  border-bottom: 0.5px solid blue;
+  margin: 3px 0;
+`;
+
+const Stars = styled.p`
+  color: gold;
+`;
+
+const InfoLabel = styled.p`
+  width: max-content;
+  color: blue;
+  font-size: 13px;
+  border-bottom: 0.5px solid blue;
+  margin: 3px 0;
+`;
+
+const CardUsername = styled.span`
+  font-size: 14px;
+`;
+
+const CardDate = styled.span``;
+
+// Second Popup
+const SecondWrapper = styled.div``;
+
+const FormContainer = styled.form`
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgb(88, 87, 87);
+`;
+
+const TitleLabel = styled.p`
+  width: max-content;
+  color: blue;
+  font-size: 13px;
+  border-bottom: 0.5px solid blue;
+  margin: 3px 0;
+`;
+
+const ReviewText = styled.textarea``;
+
+const Button = styled.button`
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(190, 31, 31);
+  cursor: pointer;
+`;

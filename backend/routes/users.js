@@ -1,64 +1,78 @@
 const router = require('express').Router();
 const User = require('../models/User');
+const Post = require('../models/Post');
 const bcrypt = require('bcrypt');
 
 /*
  ********************************
- ********** REGISTER  ***********
+ **********  UPDATE  ************
  ********************************
  */
-router.post('/register', async (req, res) => {
-  try {
-    /* 👉 generate new password */
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(req.body.password, salt);
-
-    /* 👉 create new user */
-    const newUser = new User({
-      username: req.body.username,
-      email: req.body.email,
-      password: hashedPassword,
-    });
-
-    /* 👉 save user and send response */
-    const user = await newUser.save();
-    res.status(200).json(user._id);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+router.put('/:id', async (req, res) => {
+  if (req.body.userId === req.params.id) {
+    if (req.body.password) {
+      const salt = await bcrypt.genSalt(10);
+      req.body.password = await bcrypt.hash(req.body.password, salt);
+    }
+    try {
+      const updatedUser = await User.findByIdAndUpdate(
+        req.params.id,
+        {
+          $set: req.body,
+        },
+        { new: true }
+      );
+      res.status(200).json(updatedUser);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    res.status(401).json('You can only update your account!');
   }
 });
 
 /*
  ********************************
- ************ LOGIN  ************
+ ************ DELETE  ***********
  ********************************
  */
 
-router.post('/login', async (req, res) => {
+router.delete('/:id', async (req, res) => {
+  if (req.body.userId === req.params.id) {
+    try {
+      /* 👉 find user */
+      const user = await User.findById(req.params.id);
+      try {
+        /* 👉 delete user post */
+        await Post.deleteMany({ username: user.username });
+
+        /* 👉 delete user */
+        await User.findByIdAndDelete(req.params.id);
+        res.status(200).json('User has been deleted!');
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    } catch (err) {
+      res.status(404).json('User not found!');
+    }
+  } else {
+    res.status(401).json('You can only delete your account!');
+  }
+});
+
+/*
+ ********************************
+ ********** GET USER  ***********
+ ********************************
+ */
+router.get('/:id', async (req, res) => {
   try {
-    /* 👉 find user */
-    // findOne() because there's only 1 user
-    const user = await User.findOne({
-      username: req.body.username,
-    });
-    !user && res.status(400).json('Wrong username or password');
-
-    /* 👉 validate password */
-    const validPassword = await bcrypt.compare(
-      req.body.password,
-      user.password
-    );
-    !validPassword && res.status(400).json('Wrong username or password');
-
-    /* 👉 send response */
-    res.status(200).json({
-      _id: user._id,
-      username: user.username,
-    });
+    const user = await User.findById(req.params.id);
+    /* 👉 hide user password */
+    const { password, ...others } = user._doc;
+    res.status(200).json(others);
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
 module.exports = router;
