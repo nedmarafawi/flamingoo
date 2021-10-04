@@ -36,6 +36,11 @@ export default function Navbar() {
             Post
           </Link>
         </PostItem>
+        <ListItem>
+          <Link to="/" className="link">
+            Map
+          </Link>
+        </ListItem>
         {user ? (
           <Link to="/settings">
             <Avatar>

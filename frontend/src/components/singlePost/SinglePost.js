@@ -70,20 +70,152 @@ export default function SinglePost() {
             {post.username === user?.username && (
               <PostEdit>
                 <PostIcon
-                  className=" far fa-edit"
+                  // className=" far fa-edit"
                   onClick={() => setUpdatePost(true)}
-                ></PostIcon>
+                >
+                  <>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      dataReactroot=""
+                    >
+                      <path
+                        fill="#98EED5"
+                        d="M20 12V21C20 21.55 19.55 22 19 22H3C2.45 22 2 21.55 2 21V5C2 4.45 2.45 4 3 4H12"
+                        undefined="0"
+                        transform="translate(2,2)"
+                      ></path>
+                      <path
+                        fill="none"
+                        d="M20 12V21C20 21.55 19.55 22 19 22H3C2.45 22 2 21.55 2 21V5C2 4.45 2.45 4 3 4H12"
+                        undefined="1"
+                      ></path>
+                      <path
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeMiterlimit="10"
+                        strokeWidth="1"
+                        stroke="#265F58"
+                        d="M20 12V21C20 21.55 19.55 22 19 22H3C2.45 22 2 21.55 2 21V5C2 4.45 2.45 4 3 4H12"
+                      ></path>
+                      <path
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeMiterlimit="10"
+                        strokeWidth="0"
+                        stroke="#265F58"
+                        fill="#98EED5"
+                        d="M19.15 2.38001L9.24 12.29L8 16L11.71 14.76L21.62 4.85001C22.07 4.40001 22.13 3.71001 21.74 3.32001L20.68 2.26001C20.29 1.87001 19.6 1.92001 19.15 2.38001Z"
+                        transform="translate(2,2)"
+                      ></path>
+                      <path
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeMiterlimit="10"
+                        strokeWidth="1"
+                        stroke="#265F58"
+                        fill="none"
+                        d="M19.15 2.38001L9.24 12.29L8 16L11.71 14.76L21.62 4.85001C22.07 4.40001 22.13 3.71001 21.74 3.32001L20.68 2.26001C20.29 1.87001 19.6 1.92001 19.15 2.38001Z"
+                      ></path>
+                    </svg>
+                  </>
+                </PostIcon>
                 <PostIcon
-                  className=" far fa-trash-alt"
+                  // className=" far fa-trash-alt"
                   onClick={handleDelete}
-                ></PostIcon>
+                >
+                  <>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      dataReactroot=""
+                    >
+                      <path
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeMiterlimit="10"
+                        strokeWidth="0"
+                        stroke="#265F58"
+                        fill="#98EED5"
+                        d="M16.15 22H7.85C7.36 22 6.94 21.65 6.86 21.16L5 10H19L17.14 21.16C17.06 21.65 16.64 22 16.15 22Z"
+                        transform="translate(2,2)"
+                      ></path>
+                      <path
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeMiterlimit="10"
+                        strokeWidth="1"
+                        stroke="#265F58"
+                        fill="none"
+                        d="M16.15 22H7.85C7.36 22 6.94 21.65 6.86 21.16L5 10H19L17.14 21.16C17.06 21.65 16.64 22 16.15 22Z"
+                      ></path>
+                      <path
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeMiterlimit="10"
+                        strokeWidth="1"
+                        stroke="#265F58"
+                        d="M3.5 10H20.5"
+                      ></path>
+                      <path
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeMiterlimit="10"
+                        strokeWidth="1"
+                        stroke="#265F58"
+                        d="M10 13.5V18.5"
+                      ></path>
+                      <path
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeMiterlimit="10"
+                        strokeWidth="1"
+                        stroke="#265F58"
+                        d="M14 13.5V18.5"
+                      ></path>
+                      <path
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeMiterlimit="10"
+                        strokeWidth="0"
+                        stroke="#265F58"
+                        fill="#98EED5"
+                        d="M15.95 4.56L8.04999 5.87L9.30999 3.07C9.44999 2.77 9.72999 2.55 10.06 2.49L12.95 2.01C13.28 1.96 13.62 2.07 13.84 2.31L15.95 4.56Z"
+                        transform="translate(2,2)"
+                      ></path>
+                      <path
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeMiterlimit="10"
+                        strokeWidth="1"
+                        stroke="#265F58"
+                        fill="none"
+                        d="M15.95 4.56L8.04999 5.87L9.30999 3.07C9.44999 2.77 9.72999 2.55 10.06 2.49L12.95 2.01C13.28 1.96 13.62 2.07 13.84 2.31L15.95 4.56Z"
+                      ></path>
+                      <path
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        strokeMiterlimit="10"
+                        strokeWidth="1"
+                        stroke="#265F58"
+                        d="M3 6.71001L21 3.71001"
+                      ></path>
+                    </svg>
+                  </>
+                </PostIcon>
               </PostEdit>
             )}
           </Title>
         )}
         <PostInfo>
+          By:
           <PostBy>
-            By:
             <Link to={`/?user=${post.username}`} className="link">
               <b> {post.username}</b>
             </Link>
@@ -101,25 +233,46 @@ export default function SinglePost() {
   );
 }
 
+// flex: 9;
+// height: calc(110vh - 50px);
+// height: 1000px;
 const Wrapper = styled.div`
-  flex: 9;
-`;
-
-const PostContainer = styled.div`
-  padding: 20px;
-  padding-right: 0;
+  height: calc(110vh - 30px);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url('https://images.pexels.com/photos/37728/pexels-photo-37728.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-repeat: no-repeat;
+  background-size: 100% 150%;
 `;
+// background-size: cover;
 
-const Image = styled.img`
-  height: 300px;
-  border-radius: 5px;
-  object-fit: cover;
+// padding: 20px;
+// padding-right: 0;
+// display: flex;
+// flex-direction: column;
+const PostContainer = styled.div`
+  position: relative;
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+`;
+
+const Image = styled.img`
+  height: 400px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 100%;
 `;
 
 const Title = styled.h1`
@@ -131,19 +284,50 @@ const Title = styled.h1`
 
 /* float: right; */
 const PostEdit = styled.div`
-  margin-left: 10px;
+  display: flex;
+  justify-content: flex-end;
   font-size: 16px;
 `;
 
 const PostIcon = styled.i`
   margin-left: 10px;
   cursor: pointer;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 
   &:first-child {
-    color: teal;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+
+    &:hover {
+      -webkit-transform: scale(1.5) rotate(12deg);
+      transform: scale(1.5) rotate(10deg);
+    }
+    color: black;
   }
   &:last-child {
-    color: tomato;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    &:hover {
+      -webkit-transform: rotate(-18deg);
+      transform: scale(1.5) rotate(-18deg);
+    }
+    color: red;
   }
 `;
 
@@ -151,7 +335,7 @@ const PostIcon = styled.i`
 const PostInfo = styled.div`
   margin-bottom: 20px;
   display: block;
-  margin-left: auto;
+  margin-left: 1px;
   margin-right: auto;
   width: 50%;
   justify-content: space-between;
@@ -160,12 +344,31 @@ const PostInfo = styled.div`
   color: #0e0e0e;
 `;
 
-const PostBy = styled.span``;
+const PostBy = styled.span`
+  margin-right: 10px;
+
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+  &:first-child {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: color;
+    transition-property: color;
+
+    &:hover {
+      color: #0083a3;
+    }
+  }
+`;
 
 const PostDate = styled.span``;
 
+/* word-wrap: normal; */
 const Desc = styled.p`
-  /* word-wrap: normal; */
   color: #666;
   font-size: 18px;
   line-height: 25px;
@@ -173,20 +376,22 @@ const Desc = styled.p`
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-
-  &:first-letter {
-    margin-left: 20px;
-    font-size: 30px;
-    font-weight: 600;
-  }
 `;
+// &:first-letter {
+//   margin-left: 20px;
+//   font-size: 30px;
+//   font-weight: 600;
+// }
 
 const TitleInput = styled.input`
-  margin: 10px;
+  padding: 10px;
+  margin-left: 280px;
+
   font-family: 'Lora', serif;
   font-size: 28px;
   text-align: center;
   border: none;
+  border-radius: 5px;
   color: gray;
   border-bottom: 1px solid lightgray;
 
@@ -199,7 +404,13 @@ const TitleInput = styled.input`
 const DescInput = styled.textarea`
   color: #666;
   font-size: 18px;
+  width: 100%;
+  height: 280px;
   line-height: 25px;
+  border: none;
+  resize: none;
+  border-radius: 5px;
+  padding: 10px 10px 15px 15px;
 
   &:focus {
     outline: none;
@@ -207,10 +418,14 @@ const DescInput = styled.textarea`
 `;
 
 const Button = styled.button`
+  position: absolute;
+  top: 100%;
+  left: 92%;
+
   width: 100px;
   border: none;
   background-color: teal;
-  padding: 5px;
+  padding: 10px;
   color: white;
   border-radius: 5px;
   cursor: pointer;

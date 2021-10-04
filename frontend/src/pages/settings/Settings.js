@@ -108,10 +108,11 @@ export default function Settings() {
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: center;
 `;
 
+// flex: 9;
 const SettingsContainer = styled.div`
-  flex: 9;
   padding: 20px;
 `;
 
@@ -124,7 +125,7 @@ const SettingsTitle = styled.div`
 const Title = styled.span`
   font-size: 30px;
   margin-bottom: 20px;
-  color: lightcoral;
+  color: black;
 `;
 
 const SettingsForm = styled.form`
@@ -152,7 +153,7 @@ const ProfileIcon = styled.i`
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: lightcoral;
+  background-color: black;
   color: white;
   display: flex;
   align-items: center;
@@ -190,7 +191,7 @@ const Button = styled.button`
   border: none;
   border-radius: 10px;
   color: white;
-  background-color: teal;
+  background-color: #0083a3;
   padding: 10px;
   margin-top: 20px;
   cursor: pointer;

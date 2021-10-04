@@ -142,7 +142,7 @@ const Map = () => {
                 <Card className="card">
                   <PlaceLabel>Place</PlaceLabel>
                   <PlaceTitle className="place">{p.title}</PlaceTitle>
-                  <ReviewLabel>Review</ReviewLabel>
+                  {/* <ReviewLabel>Review</ReviewLabel> */}
                   <ReviewDesc className="des">{p.des}</ReviewDesc>
                   <RatingLabel>Rating</RatingLabel>
                   <Stars className="stars">
@@ -179,11 +179,11 @@ const Map = () => {
                   placeholder="Enter a title"
                   onChange={(e) => setTitle(e.target.value)}
                 />
-                <ReviewLabel>Review</ReviewLabel>
+                {/* <ReviewLabel>Review</ReviewLabel>
                 <ReviewText
                   placeholder="Say something about this place."
                   onChange={(e) => setDesc(e.target.value)}
-                />
+                /> */}
                 <RatingLabel>Rating</RatingLabel>
                 <select onChange={(e) => setRating(e.target.value)}>
                   <option value="1">1</option>

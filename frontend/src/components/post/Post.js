@@ -32,6 +32,9 @@ export default function Post({ post }) {
 const Wrapper = styled.div`
   width: 385px;
   margin: 0px 25px 40px 25px;
+
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 `;
 
 const Image = styled.img`
@@ -80,6 +83,7 @@ const Desc = styled.p`
   font-size: 14px;
   color: #444;
   line-height: 24px;
+  padding: 5px 30px;
   margin-top: 15px;
   overflow: hidden;
   text-overflow: ellipsis;

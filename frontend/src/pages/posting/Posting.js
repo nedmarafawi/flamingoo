@@ -45,7 +45,7 @@ export default function Posting() {
       <PostingForm onSubmit={handleSubmit}>
         <FormGroup>
           <FileLabel htmlFor="fileInput">
-            <PostingIcon className=" fas fa-plus"></PostingIcon>
+            <PostingIcon className="fas fa-plus"></PostingIcon>
           </FileLabel>
 
           <FileInput
@@ -81,13 +81,14 @@ const Wrapper = styled.div`
 /* margin-left: 150px; */
 /* width: 70vw; */
 const Image = styled.img`
-  height: 250px;
+  height: 300px;
   border-radius: 10px;
   object-fit: cover;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  margin-bottom: 30px;
+  width: 38%;
 `;
 
 // TODO: Remove underline
@@ -100,7 +101,10 @@ const PostingForm = styled.form`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 38%;
+
+  border-radius: 10px;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 `;
 
 /* margin-left: 150px; */
@@ -112,8 +116,7 @@ const FormGroup = styled.div`
 const PostingIcon = styled.i`
   width: 25px;
   height: 25px;
-  border-radius: 50%;
-  border: 1px solid;
+  padding-left: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -139,20 +142,31 @@ const Text = styled.textarea`
   resize: none;
   font-size: 20px;
   height: 25vh;
-  min-width: 700px;
+  min-width: 690px;
   max-width: 100%;
+  border: none;
+  padding-left: 1em;
+  outline: none;
+
+  overflow: auto;
 `;
+// border-radius: 5px;
 
 /* right: 50px; */
 const Button = styled.button`
   position: absolute;
-  top: 138%;
-  left: 1%;
+  top: 110%;
+  left: 87%;
+
   color: white;
-  background-color: teal;
-  padding: 10px 20px 10px;
+  background-color: #0083a3;
+  padding: 10px 30px 10px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
+
+  &:hover {
+    background-color: #00647d;
+  }
 `;
