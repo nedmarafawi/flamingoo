@@ -37,7 +37,7 @@ export default function Navbar() {
           </Link>
         </PostItem>
         <ListItem>
-          <Link to="/" className="link">
+          <Link to="/map" className="link">
             Map
           </Link>
         </ListItem>
