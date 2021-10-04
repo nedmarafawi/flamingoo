@@ -53,7 +53,7 @@ export default function Login() {
         Don't have an account?
         <RegisterOption>
           <Link className="link" to="/register">
-            Sign Up
+            Sign up
           </Link>
         </RegisterOption>
       </RegisterContainer>

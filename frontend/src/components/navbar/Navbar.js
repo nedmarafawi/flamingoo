@@ -18,7 +18,7 @@ export default function Navbar() {
     <Wrapper>
       <NavbarLeft>
         <Link to="/" className="link">
-          The Traveler
+          FlaminGoo
         </Link>
       </NavbarLeft>
       {/* <NavbarCenter>
@@ -44,16 +44,18 @@ export default function Navbar() {
           </Link>
         ) : (
           <Lists>
-            <ListItem>
+            <ListItemLogin>
               <Link to="/login" className="link">
                 Sign In
               </Link>
-            </ListItem>
-            <ListItem>
-              <Link to="/register" className="link">
-                Register
-              </Link>
-            </ListItem>
+            </ListItemLogin>
+            <ListItemRegister>
+              <RegisterContainer>
+                <Link to="/register" className="link">
+                  Sign up
+                </Link>
+              </RegisterContainer>
+            </ListItemRegister>
           </Lists>
         )}
         {/* <i className="navbarSearchIcon fas fa-search"></i> */}
@@ -201,6 +203,43 @@ const ListItem = styled.li`
 
   &:hover {
     color: #0083a3;
+  }
+`;
+
+const ListItemLogin = styled.div`
+  margin-right: 20px;
+  margin-top: 7px;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  list-style: none;
+
+  &:hover {
+    color: #0083a3;
+  }
+`;
+
+const ListItemRegister = styled.li`
+  margin-right: 20px;
+  margin-top: 1px;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  list-style: none;
+
+  &:hover {
+    color: #0083a3;
+  }
+`;
+
+const RegisterContainer = styled.div`
+  padding: 5px 10px 7px;
+  background-color: #0083a3;
+  color: #fff;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: #00647d;
   }
 `;
 
