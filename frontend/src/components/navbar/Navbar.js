@@ -46,7 +46,7 @@ export default function Navbar() {
           <Lists>
             <ListItem>
               <Link to="/login" className="link">
-                Login
+                Sign In
               </Link>
             </ListItem>
             <ListItem>

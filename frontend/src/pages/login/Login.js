@@ -28,14 +28,17 @@ export default function Login() {
   // console.log(user);
   return (
     <Wrapper>
-      <Title>Login</Title>
       <LoginForm onSubmit={handleSubmit}>
-        <UsernameLabel>Username</UsernameLabel>
-        <LoginInput
-          type="text"
-          placeholder="Enter your username"
-          ref={userRef}
-        />
+        <Title>Hello!</Title>
+        <SubTitle>Sign into your account here.</SubTitle>
+        <OuterSpan>
+          <UsernameLabel>Username</UsernameLabel>
+          <LoginInput
+            type="text"
+            placeholder="Enter your username"
+            ref={userRef}
+          />
+        </OuterSpan>
         <PasswordLabel>Password</PasswordLabel>
         <LoginInput
           type="password"
@@ -43,14 +46,17 @@ export default function Login() {
           ref={passwordRef}
         />
         <LoginBtn type="submit" disabled={isFetching}>
-          Login
+          Sign In
         </LoginBtn>
       </LoginForm>
-      <RegisterBtn>
-        <Link className="link" to="/register">
-          Register
-        </Link>
-      </RegisterBtn>
+      <RegisterContainer>
+        Don't have an account?
+        <RegisterOption>
+          <Link className="link" to="/register">
+            Sign Up
+          </Link>
+        </RegisterOption>
+      </RegisterContainer>
     </Wrapper>
   );
 }
@@ -61,61 +67,114 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url('https://images.pexels.com/photos/2739013/pexels-photo-2739013.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background: url('https://images.pexels.com/photos/2739013/pexels-photo-2739013.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-size: cover;
+  opacity: 0.9;
 `;
 
 const Title = styled.span`
   font-size: 50px;
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 30px;
+  font-weight: 700;
+`;
+
+const SubTitle = styled.span`
+  font-size: 15px;
+  text-align: center;
+  margin-top: -35px;
+  margin-bottom: 30px;
+  color: gray;
 `;
 
 const LoginForm = styled.form`
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+
+  background-color: #ebebeb;
+  border-radius: 0.5rem;
+  padding: 60px;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+`;
+
+const OuterSpan = styled.div`
+  margin-bottom: 10px;
 `;
 
 const UsernameLabel = styled.p`
-  margin: 10px 0;
+  margin: 10px 7px;
 `;
 
 const PasswordLabel = styled.p`
-  margin: 10px 0;
+  margin: 10px 7px;
 `;
 
 const LoginInput = styled.input`
-  padding: 10px;
+  padding: 1rem;
   background-color: white;
   border: none;
-`;
+  border-radius: 0.5rem;
+  outline: none;
 
-const LoginBtn = styled.button`
-  margin-top: 20px;
-  cursor: pointer;
-  background-color: rgb(243, 113, 26);
-  border: none;
-  color: white;
-  border-radius: 10px;
-  padding: 10px;
-
-  &:disabled {
-    cursor: not-allowed;
-    background-color: rgb(252, 173, 173);
+  &:hover {
+    box-shadow: 0px 15px 36px rgba(0, 0, 0, 0.15);
   }
 `;
 
-const RegisterBtn = styled.button`
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: teal;
+// margin-top: 20px;
+// cursor: pointer;
+// background-color: rgb(243, 113, 26);
+// border: none;
+// color: white;
+// border-radius: 10px;
+// padding: 10px;
+
+// &:disabled {
+//   cursor: not-allowed;
+//   background-color: rgb(252, 173, 173);
+// }
+const LoginBtn = styled.button`
+  width: 100%;
+  padding: 1rem;
+  font-size: 0.938rem;
+  outline: none;
+  border: none;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  background-color: #0083a3;
+  color: #fff;
+  border-radius: 0.5rem;
   cursor: pointer;
+
+  &:hover {
+    background-color: #00647d;
+  }
+`;
+
+const RegisterContainer = styled.div`
+  display: inline-block;
+  margin-top: 26rem;
+  text-align: center;
+  position: absolute;
   border: none;
   padding: 10px;
-  color: white;
-  border-radius: 10px;
+  margin-right: 2px;
+`;
+
+// right: 20px;
+const RegisterOption = styled.p`
+  display: inline-block;
+  cursor: pointer;
+  color: blue;
+  margin-left: 10px;
+
+  font-size: 1rem;
+  color: #005063;
+  font-weight: 500;
+
+  &:hover {
+    color: #0083a3;
+  }
 `;
