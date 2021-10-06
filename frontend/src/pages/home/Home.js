@@ -32,11 +32,11 @@ export default function Home({ post }) {
             <FeatureSubTitle>
               <HeaderTitle>Map</HeaderTitle>
               <Paragraph>
-                Search from millions of locations available
+                Search from millions of locations
                 <br></br>
-                and pin your travels on your very own digital
+                available and pin your favorite travels
                 <br></br>
-                push pin travel map!
+                locations with two-clicks!
               </Paragraph>
             </FeatureSubTitle>
           </Link>
@@ -44,11 +44,11 @@ export default function Home({ post }) {
             <FeatureSubTitle>
               <HeaderTitle>Post</HeaderTitle>
               <Paragraph>
-                Search from millions of locations available
+                Post your stories, trips and your photos.
                 <br></br>
-                and pin your travels on your very own digital
+                Save your favorite places from your trips.
                 <br></br>
-                push pin travel map!
+                Never forget your adventures!
               </Paragraph>
             </FeatureSubTitle>
           </Link>
@@ -161,7 +161,7 @@ const FeaturesTitle = styled.p`
   top: 95%;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  width: 95%;
   color: #063734;
 `;
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import axios from 'axios';
@@ -6,14 +6,18 @@ import { useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../context/Context';
 
+// import backgroundVideo from '../../components/assets/video3.mp4';
+
 export default function Login() {
   const userRef = useRef();
   const passwordRef = useRef();
   const { dispatch, isFetching } = useContext(Context);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch({ type: 'LOGIN_START' });
+    setError(false);
     try {
       const res = await axios.post('/auth/login', {
         username: userRef.current.value,
@@ -21,6 +25,7 @@ export default function Login() {
       });
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
     } catch (err) {
+      setError(true);
       dispatch({ type: 'LOGIN_FAILURE' });
     }
   };
@@ -28,6 +33,22 @@ export default function Login() {
   // console.log(user);
   return (
     <Wrapper>
+      {/* <BackgroundVideo>
+        <video
+          autoPlay
+          loop
+          muted
+          style={{
+            height: '120%',
+            width: '100%',
+            zIndex: '-1',
+            position: 'absolute',
+            objectFit: 'cover',
+          }}
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+      </BackgroundVideo> */}
       <LoginForm onSubmit={handleSubmit}>
         <Title>Hello!</Title>
         <SubTitle>Sign into your account here.</SubTitle>
@@ -57,19 +78,46 @@ export default function Login() {
           </Link>
         </RegisterOption>
       </RegisterContainer>
+      <BottomTerms>
+        By signing in, you agree to our
+        <br></br>
+        <a href="#" style={{ color: 'black' }}>
+          Privacy Policy
+        </a>
+        , and&nbsp;&nbsp;
+        <a href="#" style={{ color: 'black' }}>
+          Terms of Service
+        </a>
+        .
+      </BottomTerms>
+      {error && <ErrorMsg>Something went wrong!</ErrorMsg>}
     </Wrapper>
   );
 }
 
+// height: calc(100vh - 50px);
+// display: flex;
+// flex-direction: column;
+// align-items: center;
+// justify-content: center;
+// background-size: cover;
+// opacity: 0.9;
 const Wrapper = styled.div`
-  height: calc(100vh - 50px);
   display: flex;
+  height: calc(85vh - 50px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url('https://images.pexels.com/photos/2739013/pexels-photo-2739013.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-size: cover;
-  opacity: 0.9;
+`;
+// background: url('https://images.pexels.com/photos/2739013/pexels-photo-2739013.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+
+const BackgroundVideo = styled.div`
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 50px);
+  z-index: -1;
 `;
 
 const Title = styled.span`
@@ -88,14 +136,14 @@ const SubTitle = styled.span`
   color: gray;
 `;
 
+// margin-top: 20px;
 const LoginForm = styled.form`
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
 
   background-color: #ebebeb;
   border-radius: 0.5rem;
-  padding: 60px;
+  padding: 60px 60px 90px;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 `;
 
@@ -153,13 +201,19 @@ const LoginBtn = styled.button`
   }
 `;
 
+// display: inline-block;
+// margin-top: 26rem;
+// text-align: center;
+// position: absolute;
+// border: none;
+// padding: 10px;
+// margin-right: 2px;
 const RegisterContainer = styled.div`
   display: inline-block;
-  margin-top: 26rem;
+  margin-top: 25rem;
   text-align: center;
   position: absolute;
   border: none;
-  padding: 10px;
   margin-right: 2px;
 `;
 
@@ -177,4 +231,19 @@ const RegisterOption = styled.p`
   &:hover {
     color: #0083a3;
   }
+`;
+
+const BottomTerms = styled.p`
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 42rem;
+  text-align: center;
+  position: absolute;
+  border: none;
+  margin-right: 2px;
+`;
+
+const ErrorMsg = styled.span`
+  color: red;
+  margin-top: -45px;
 `;

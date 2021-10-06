@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+// import backgroundVideo from '../../components/assets/video4.mp4';
+
 export default function Register() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -26,6 +28,22 @@ export default function Register() {
 
   return (
     <Wrapper>
+      {/* <BackgroundVideo>
+        <video
+          autoPlay
+          loop
+          muted
+          style={{
+            height: '120%',
+            width: '100%',
+            zIndex: '-1',
+            position: 'absolute',
+            objectFit: 'cover',
+          }}
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+      </BackgroundVideo> */}
       <RegisterForm onSubmit={handleSubmit}>
         <Title>FlaminGoo</Title>
         <SubTitle>Sign up to share your story.</SubTitle>
@@ -49,7 +67,6 @@ export default function Register() {
         />
         <RegisterBtn type="submit">Create your free account</RegisterBtn>
       </RegisterForm>
-      {error && <ErrorMsg>Something went wrong!</ErrorMsg>}
       <LoginContainer>
         Already registered?
         <LoginOption>
@@ -58,19 +75,49 @@ export default function Register() {
           </Link>
         </LoginOption>
       </LoginContainer>
+      <BottomTerms>
+        By signing in, you agree to our
+        <br></br>
+        <a href="#" style={{ color: 'black' }}>
+          Privacy Policy
+        </a>
+        , and&nbsp;&nbsp;
+        <a href="#" style={{ color: 'black' }}>
+          Terms of Service
+        </a>
+        .
+      </BottomTerms>
+      {error && <ErrorMsg>Something went wrong!</ErrorMsg>}
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
-  height: calc(100vh - 50px);
   display: flex;
+  height: calc(95vh - 50px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url('https://images.pexels.com/photos/2356045/pexels-photo-2356045.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-size: cover;
-  opacity: 0.9;
+  no-repeat center fixed;
+  `;
+// background: url('https://images.pexels.com/photos/4006534/pexels-photo-4006534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+
+// const Image = styled.div`
+//   width: 100%;
+//   height: 150%;
+//   object-fit: cover;
+//   z-index: -99;
+//   background: url('https://images.pexels.com/photos/4006534/pexels-photo-4006534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+// `;
+
+// margin-top: -100px;
+const BackgroundVideo = styled.div`
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 50px);
+  z-index: -1;
 `;
 
 const Title = styled.span`
@@ -89,14 +136,14 @@ const SubTitle = styled.span`
   color: gray;
 `;
 
+// margin-top: 180px;
 const RegisterForm = styled.form`
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
-
   background-color: #ebebeb;
   border-radius: 0.5rem;
-  padding: 60px;
+  padding: 60px 60px 90px;
+
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 `;
 
@@ -151,13 +198,13 @@ const RegisterBtn = styled.button`
 
 const LoginContainer = styled.div`
   display: inline-block;
-  margin-top: 33rem;
+  margin-top: 30rem;
   text-align: center;
   position: absolute;
   border: none;
-  padding: 10px;
   margin-right: 2px;
 `;
+// padding: 10px;
 
 const LoginOption = styled.p`
   display: inline-block;
@@ -174,7 +221,17 @@ const LoginOption = styled.p`
   }
 `;
 
+const BottomTerms = styled.p`
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 47rem;
+  text-align: center;
+  position: absolute;
+  border: none;
+  margin-right: 2px;
+`;
+
 const ErrorMsg = styled.span`
   color: red;
-  margin-top: -60px;
+  margin-top: -45px;
 `;

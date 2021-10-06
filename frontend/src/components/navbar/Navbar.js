@@ -89,7 +89,6 @@ const Wrapper = styled.div`
   justify-content: space-between;
   font-family: 'Josefin Sans', sans-serif;
   color: #303336;
-  z-index: 999;
   box-shadow: 0 1rem 8rem 0 rgba(0, 0, 0, 0.2);
 `;
 // transform: translate(-50%, -50%);

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import backgroundVideo from '../assets/video.mp4';
+import backgroundVideo from '../assets/Video.mp4';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
