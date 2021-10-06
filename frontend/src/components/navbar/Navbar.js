@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { keyframes } from 'styled-components';
+// import { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { Context } from '../../context/Context';
@@ -18,7 +18,8 @@ export default function Navbar() {
     <Wrapper>
       <NavbarLeft>
         <Link to="/" className="link">
-          FlaminGoo
+          <i class="fas fa-kiwi-bird"></i>
+          &nbsp;FlaminGoo
         </Link>
       </NavbarLeft>
       {/* <NavbarCenter>
@@ -97,6 +98,7 @@ const Wrapper = styled.div`
 const NavbarLeft = styled.div`
   margin-left: 150px;
   margin-bottom: 10px;
+  font-size: 25px;
   margin-top: 10px;
   display: flex;
   align-items: center;
@@ -106,6 +108,10 @@ const NavbarLeft = styled.div`
     color: #0083a3;
   }
 `;
+
+// const BirdIcon = styled.i`
+
+// `;
 
 // flex: 1;
 const NavbarRight = styled.div`

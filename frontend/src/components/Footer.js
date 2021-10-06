@@ -39,7 +39,8 @@ export const Footer = () => {
         <Media>
           <MediaWrap>
             <Logo onClick={handleClickScroll} to="/">
-              FlaminGoo<span style={{ color: 'gray' }}></span>
+              <i class="fas fa-kiwi-bird"></i>
+              &nbsp; FlaminGoo<span style={{ color: 'gray' }}></span>
             </Logo>
             <CopyRight>
               Copyright © {new Date().getFullYear()}. All Rights Reserved{' '}

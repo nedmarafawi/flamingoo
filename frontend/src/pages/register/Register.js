@@ -45,7 +45,11 @@ export default function Register() {
         </video>
       </BackgroundVideo> */}
       <RegisterForm onSubmit={handleSubmit}>
-        <Title>FlaminGoo</Title>
+        <Title>
+          <i class="fas fa-kiwi-bird"></i>
+          <br></br>
+          FlaminGoo
+        </Title>
         <SubTitle>Sign up to share your story.</SubTitle>
         <UsernameLabel>Username</UsernameLabel>
         <RegisterInput
@@ -94,7 +98,7 @@ export default function Register() {
 
 const Wrapper = styled.div`
   display: flex;
-  height: calc(95vh - 50px);
+  height: calc(101.8vh - 50px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -198,7 +202,7 @@ const RegisterBtn = styled.button`
 
 const LoginContainer = styled.div`
   display: inline-block;
-  margin-top: 30rem;
+  margin-top: 35rem;
   text-align: center;
   position: absolute;
   border: none;
@@ -224,7 +228,7 @@ const LoginOption = styled.p`
 const BottomTerms = styled.p`
   font-size: 12px;
   display: inline-block;
-  margin-top: 47rem;
+  margin-top: 52rem;
   text-align: center;
   position: absolute;
   border: none;
