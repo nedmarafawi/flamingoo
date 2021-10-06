@@ -234,8 +234,8 @@ export default function SinglePost() {
 }
 
 // flex: 9;
-// height: calc(110vh - 50px);
 // height: 1000px;
+// height: calc(110vh - 50px);
 const Wrapper = styled.div`
   height: calc(110vh - 30px);
   display: flex;
@@ -253,13 +253,14 @@ const Wrapper = styled.div`
 // background-size: cover;
 
 // padding: 20px;
+// flex-direction: column;
 // padding-right: 0;
 // display: flex;
-// flex-direction: column;
 const PostContainer = styled.div`
-  position: relative;
+  position: absolute;
   display: block;
   margin-left: auto;
+  left: 25%;
   margin-right: auto;
   width: 50%;
 `;

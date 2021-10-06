@@ -104,7 +104,7 @@ const Map = () => {
   };
 
   return (
-    <FirstWrapper className="App">
+    <FirstWrapper className="App" id="map">
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}

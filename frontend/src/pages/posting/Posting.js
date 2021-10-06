@@ -75,7 +75,8 @@ export default function Posting() {
 }
 
 const Wrapper = styled.div`
-  padding-top: 50px;
+  padding-top: 70px;
+  min-height: 40vh;
 `;
 
 /* margin-left: 150px; */

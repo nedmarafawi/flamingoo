@@ -37,15 +37,18 @@ export default function Navbar() {
           </Link>
         </PostItem>
         <ListItem>
-          <Link to="/map" className="link">
+          <Link to="/mapping" className="link">
             Map
           </Link>
+          {/* <Links to="map" spy={true} smooth={true}>
+            ABOUT
+          </Links> */}
         </ListItem>
         {user ? (
           <Link to="/settings">
-            <Avatar>
-              <Image src={publicFolder + user.profileAvatar} alt="" />
-            </Avatar>
+            {/* <Avatar> */}
+            <Image src={publicFolder + user.profileAvatar} alt="" />
+            {/* </Avatar> */}
           </Link>
         ) : (
           <Lists>
@@ -76,16 +79,16 @@ export default function Navbar() {
 }
 
 const Wrapper = styled.div`
-  margin-top: 5px;
+  background-color: white;
+  padding-top: 5px;
   width: 100%;
   height: 60px;
-  background-color: white;
-  position: sticky;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: 'Josefin Sans', sans-serif;
+  color: #303336;
   z-index: 999;
   box-shadow: 0 1rem 8rem 0 rgba(0, 0, 0, 0.2);
 `;
@@ -116,23 +119,22 @@ const NavbarRight = styled.div`
 
   transition: 0.5s;
 
-  &:after {
-    position: absolute;
-    content: '';
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: #d5d7d8;
-    transform: scaleX(5);
-    transform-origin: right;
-    transition: transform 0.5s;
-  }
-
   &:hover {
-    color: #95a5a6;
+    color: gray;
   }
 `;
+// &:after {
+//   position: absolute;
+//   content: '';
+//   top: 100%;
+//   left: 0;
+//   width: 100%;
+//   height: 1px;
+//   background: #d5d7d8;
+//   transform: scaleX(5);
+//   transform-origin: right;
+//   transition: transform 0.5s;
+// }
 
 // const NavbarLogout = styled.div`
 //   font-size: 18px;
@@ -152,30 +154,24 @@ const Logout = styled.div`
 // cursor: pointer;
 // `;
 
-// 0% { border-color: hsl(0, 100%, 50%); }
-//   25% { border-color: hsl(90, 100%, 50%); }
-//   50% { border-color: hsl(180, 100%, 50%); }
-//   75% { border-color: hsl(270, 100%, 50%); }
-//   100% { border-color: hsl(360, 100%, 50%); }
+// const AvatarAnimated = keyframes`
+// 0% {
+//   -webkit-transform: translateY(-8px);
+//   transform: translateY(-8px);
+// }
+// 50% {
+//   -webkit-transform: translateY(-4px);
+//   transform: translateY(-4px);
+// }
+// 100% {
+//   -webkit-transform: translateY(-8px);
+//   transform: translateY(-8px);
+// }
+// `;
 
-const AvatarAnimated = keyframes`
-0% {
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
-}
-50% {
-  -webkit-transform: translateY(-4px);
-  transform: translateY(-4px);
-}
-100% {
-  -webkit-transform: translateY(-8px);
-  transform: translateY(-8px);
-}
-`;
-
-const Avatar = styled.div`
-  animation: ${AvatarAnimated} 5s infinite;
-`;
+// const Avatar = styled.div`
+//   animation: ${AvatarAnimated} 5s infinite;
+// `;
 
 const Image = styled.img`
   width: 40px;
