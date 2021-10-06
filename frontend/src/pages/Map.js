@@ -30,8 +30,8 @@ const Map = () => {
   const [rating, setRating] = useState(0);
 
   const [viewport, setViewport] = useState({
-    width: '95vw',
-    height: '70vh',
+    width: '98vw',
+    height: '90vh',
     latitude: 54,
     longitude: -105,
     zoom: 4,
@@ -105,6 +105,7 @@ const Map = () => {
 
   return (
     <FirstWrapper className="App" id="map">
+      <TitleMap>Map</TitleMap>
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
@@ -215,10 +216,19 @@ const FirstWrapper = styled.div`
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 95%;
+  margin-top: 70px;
+  width: 98.5%;
 `;
 // margin-left: 2px;
 // margin-right: 555px;
+
+const TitleMap = styled.h2`
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 12%;
+  left: 50%;
+`;
 
 const Card = styled.div`
   width: 250px;

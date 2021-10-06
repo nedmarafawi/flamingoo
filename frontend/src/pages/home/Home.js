@@ -72,7 +72,9 @@ export default function Home({ post }) {
           src="https://images.pexels.com/photos/4477407/pexels-photo-4477407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           atl=""
         />
-        <ImageTitleOne>Iceland</ImageTitleOne>
+        <Link to={`/post/615dc632043a0686044756ae`} className="link">
+          <ImageTitleOne>Iceland</ImageTitleOne>
+        </Link>
         <ImageOne
           src="https://images.pexels.com/photos/2070485/pexels-photo-2070485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           atl=""
@@ -84,17 +86,23 @@ export default function Home({ post }) {
           src="https://images.pexels.com/photos/2245436/pexels-photo-2245436.png?auto=compress&cs=tinysrgb&h=650&w=940"
           atl=""
         />
-        <ImageTitleThree>Algeria</ImageTitleThree>
+        <Link to={`/post/615dc7ef043a0686044756ca`} className="link">
+          <ImageTitleThree>Algeria</ImageTitleThree>
+        </Link>
         <ImageOne
           src="https://images.pexels.com/photos/3889742/pexels-photo-3889742.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           atl=""
         />
-        <ImageTitleFour>Turkey</ImageTitleFour>
+        <Link to={`/post/615dcbc4043a0686044756ff`} className="link">
+          <ImageTitleFour>Turkey</ImageTitleFour>
+        </Link>
         <ImageThree
           src="https://images.pexels.com/photos/4161911/pexels-photo-4161911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           atl=""
         />
-        <ImageTitleFive>Italy</ImageTitleFive>
+        <Link to={`/post/615dcf52043a06860447574d`} className="link">
+          <ImageTitleFive>Italy</ImageTitleFive>
+        </Link>
       </ImageContainer>
       <MapTitle>Where will you pin next?!</MapTitle>
       <MapContainer>
@@ -110,7 +118,7 @@ export default function Home({ post }) {
 }
 
 const Wrapper = styled.div`
-  min-height: 470vh;
+  min-height: 475vh;
   display: flex;
 `;
 
