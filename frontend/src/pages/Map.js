@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
-import { Room, Star } from '@material-ui/icons';
+import { RoomTwoTone } from '@material-ui/icons';
 
 import styled from 'styled-components';
 
@@ -110,7 +110,7 @@ const Map = () => {
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
         onViewportChange={(nextViewport) => setViewport(nextViewport)}
-        mapStyle="mapbox://styles/nedmarafawi/cku3331p809n617nt20vhybin"
+        mapStyle="mapbox://styles/nedmarafawi/ckug2kuqa06jq17o3rbp5vas8"
         onDblClick={handleAddClick}
         transitionDuration="200"
       >
@@ -122,10 +122,10 @@ const Map = () => {
               offsetLeft={-viewport.zoom * 3.5}
               offsetTop={-viewport.zoom * 7}
             >
-              <Room
+              <RoomTwoTone
                 style={{
                   fontSize: viewport.zoom * 7,
-                  color: p.username === p.username ? 'blue' : 'red',
+                  color: p.username === p.username ? '#F59700' : 'red',
                   cursor: 'pointer',
                 }}
                 onClick={() => handleMarkerClick(p._id, p.lat, p.long)}
@@ -143,16 +143,33 @@ const Map = () => {
                 <Card className="card">
                   <PlaceLabel>Place</PlaceLabel>
                   <PlaceTitle className="place">{p.title}</PlaceTitle>
-                  {/* <ReviewLabel>Review</ReviewLabel> */}
-                  <ReviewDesc className="des">{p.des}</ReviewDesc>
+                  {/* <ReviewDesc className="des">{p.des}</ReviewDesc> */}
                   <RatingLabel>Rating</RatingLabel>
                   <Stars className="stars">
-                    {Array(p.rating).fill(<Star className="star" />)}
+                    {Array(p.rating).fill(
+                      <>
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          dataReactroot=""
+                        >
+                          <path
+                            strokeLinejoin="round"
+                            strokeLinecap="round"
+                            strokeWidth="1"
+                            stroke="#FF7373"
+                            fill="#d0021b"
+                            d="M21.8688 9.00004C20.9051 14.03 14.6126 19.762 12.6023 21.4846C12.2447 21.791 11.729 21.7896 11.3735 21.4808C9.39224 19.7598 3.22301 14.0646 2.14642 9.00004C1.29483 4.99389 4.3218 2 6.98599 2C9.99495 2 11.986 4.00004 11.986 4.00004C11.986 4.00004 14.1227 1.99993 16.986 2C19.8696 2.00007 22.6375 4.8726 21.8688 9.00004Z"
+                          ></path>
+                        </svg>
+                      </>
+                    )}
                   </Stars>
-                  <InfoLabel>Information</InfoLabel>
                   <CardUsername className="username">
-                    {/* Created by <b>{p.username}</b> */}
-                    Created by
+                    Created by&nbsp;
                     <Link to={`/?user=${p.username}`} className="link">
                       <b>{p.username}</b>
                     </Link>
@@ -176,15 +193,11 @@ const Map = () => {
             <SecondWrapper>
               <FormContainer onSubmit={handleSubmit}>
                 <TitleLabel>Title</TitleLabel>
-                <input
+                <InputTitle
                   placeholder="Enter a title"
                   onChange={(e) => setTitle(e.target.value)}
                 />
-                {/* <ReviewLabel>Review</ReviewLabel>
-                <ReviewText
-                  placeholder="Say something about this place."
-                  onChange={(e) => setDesc(e.target.value)}
-                /> */}
+
                 <RatingLabel>Rating</RatingLabel>
                 <select onChange={(e) => setRating(e.target.value)}>
                   <option value="1">1</option>
@@ -207,7 +220,6 @@ const Map = () => {
 
 export default Map;
 
-// margin-top: 80px;
 const FirstWrapper = styled.div`
   border-radius: 10px;
   display: flex;
@@ -219,8 +231,6 @@ const FirstWrapper = styled.div`
   margin-top: 70px;
   width: 98.5%;
 `;
-// margin-left: 2px;
-// margin-right: 555px;
 
 const TitleMap = styled.h2`
   display: flex;
@@ -238,57 +248,53 @@ const Card = styled.div`
   justify-content: space-around;
 `;
 
+// width: max-content;
 const PlaceLabel = styled.p`
-  width: max-content;
-  color: blue;
-  font-size: 13px;
-  border-bottom: 0.5px solid blue;
+  color: black;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
   margin: 3px 0;
 `;
 
-const PlaceTitle = styled.h4``;
-
-const ReviewLabel = styled.p`
-  width: max-content;
-  color: blue;
-  font-size: 13px;
-  border-bottom: 0.5px solid blue;
-  margin: 3px 0;
+const PlaceTitle = styled.h4`
+  display: flex;
+  justify-content: center;
 `;
 
 const ReviewDesc = styled.p`
   width: max-content;
-  color: blue;
+  color: black;
   font-size: 13px;
   border-bottom: 0.5px solid blue;
   margin: 3px 0;
 `;
 
+// width: max-content;
 const RatingLabel = styled.p`
-  width: max-content;
-  color: blue;
-  font-size: 13px;
-  border-bottom: 0.5px solid blue;
+  color: black;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
   margin: 3px 0;
 `;
 
 const Stars = styled.p`
   color: gold;
-`;
-
-const InfoLabel = styled.p`
-  width: max-content;
-  color: blue;
-  font-size: 13px;
-  border-bottom: 0.5px solid blue;
-  margin: 3px 0;
+  display: flex;
+  justify-content: center;
 `;
 
 const CardUsername = styled.span`
   font-size: 14px;
+  display: flex;
+  justify-content: center;
 `;
 
-const CardDate = styled.span``;
+const CardDate = styled.span`
+  display: flex;
+  justify-content: center;
+`;
 
 // Second Popup
 const SecondWrapper = styled.div``;
@@ -296,27 +302,34 @@ const SecondWrapper = styled.div``;
 const FormContainer = styled.form`
   width: 250px;
   height: 250px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: rgb(88, 87, 87);
 `;
 
+// width: max-content;
 const TitleLabel = styled.p`
-  width: max-content;
-  color: blue;
-  font-size: 13px;
-  border-bottom: 0.5px solid blue;
+  color: black;
+  font-size: 18px;
   margin: 3px 0;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
 `;
 
-const ReviewText = styled.textarea``;
+const InputTitle = styled.input``;
 
 const Button = styled.button`
   border: none;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   color: white;
-  background-color: rgb(190, 31, 31);
+  background-color: #f59700;
   cursor: pointer;
+
+  &:hover {
+    background-color: #cc7e00;
+  }
 `;

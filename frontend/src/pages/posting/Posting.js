@@ -45,7 +45,73 @@ export default function Posting() {
       <PostingForm onSubmit={handleSubmit}>
         <FormGroup>
           <FileLabel htmlFor="fileInput">
-            <PostingIcon className="fas fa-plus"></PostingIcon>
+            {/* <PostingIcon className="fas fa-plus"></PostingIcon> */}
+            <PostIcon>
+              <>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  dataReactroot=""
+                >
+                  <path
+                    fill="#85D0CC"
+                    d="M22 14V5C22 3.9 21.1 3 20 3H4C2.9 3 2 3.9 2 5V15V17C2 18.1 2.9 19 4 19H14"
+                    clipRule="evenodd"
+                    fillRule="evenodd"
+                    undefined="1"
+                  ></path>
+                  <path
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                    strokeMiterlimit="10"
+                    strokeWidth="1"
+                    stroke="#265F58"
+                    d="M22 14V5C22 3.9 21.1 3 20 3H4C2.9 3 2 3.9 2 5V15V17C2 18.1 2.9 19 4 19H14"
+                  ></path>
+                  <path
+                    fill="#98EED5"
+                    d="M22 14L17 8L11 16L6 12L2 15V17C2 18.1 2.9 19 4 19H14"
+                    clipRule="evenodd"
+                    fillRule="evenodd"
+                    undefined="1"
+                  ></path>
+                  <path
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                    strokeMiterlimit="10"
+                    strokeWidth="1"
+                    stroke="#265F58"
+                    d="M22 14L17 8L11 16L6 12L2 15V17C2 18.1 2.9 19 4 19H14"
+                  ></path>
+                  <path
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                    strokeMiterlimit="10"
+                    strokeWidth="1"
+                    stroke="#265F58"
+                    fill="#98EED5"
+                    d="M7 8C7.55228 8 8 7.55228 8 7C8 6.44772 7.55228 6 7 6C6.44772 6 6 6.44772 6 7C6 7.55228 6.44772 8 7 8Z"
+                  ></path>
+                  <path
+                    strokeLinejoin="round"
+                    strokeMiterlimit="10"
+                    strokeWidth="1"
+                    stroke="#265F58"
+                    d="M17 19H23"
+                  ></path>
+                  <path
+                    strokeLinejoin="round"
+                    strokeMiterlimit="10"
+                    strokeWidth="1"
+                    stroke="#265F58"
+                    d="M20 16V22"
+                  ></path>
+                </svg>
+              </>
+            </PostIcon>
           </FileLabel>
 
           <FileInput
@@ -114,7 +180,7 @@ const FormGroup = styled.div`
   align-items: center;
 `;
 
-const PostingIcon = styled.i`
+const PostIcon = styled.i`
   width: 25px;
   height: 25px;
   padding-left: 0.7rem;
@@ -122,9 +188,42 @@ const PostingIcon = styled.i`
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  color: rgb(121, 118, 118);
   cursor: pointer;
+
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+
+  &:first-child {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+
+    &:hover {
+      -webkit-transform: scale(1.3) translateZ(0);
+      transform: scale(1.3) translateZ(0);
+    }
+  }
 `;
+
+// const PostingIcon = styled.i`
+//   width: 25px;
+//   height: 25px;
+//   padding-left: 0.7rem;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: 20px;
+//   color: rgb(121, 118, 118);
+//   cursor: pointer;
+// `;
 
 const PostingInput = styled.input`
   border: none;

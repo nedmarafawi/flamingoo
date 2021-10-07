@@ -432,4 +432,8 @@ const Button = styled.button`
   cursor: pointer;
   align-self: flex-end;
   margin-top: 20px;
+
+  &:hover {
+    background-color: #00647d;
+  }
 `;

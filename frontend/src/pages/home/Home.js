@@ -353,37 +353,13 @@ const MapTitle = styled.h2`
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 218%;
+  top: 223%;
   color: #063734;
 
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 `;
-// right: 34.5%;
-
-// const ImageCard = styled.div`
-//   top: 100%;
-//   display: flex;
-//   justify-content: center;
-//   position: absolute;
-//   width: 50%;
-//   color: white;
-// `;
-
-// const ImageTitle = styled.div`
-//   font-size: 10px;
-// `;
-
-// const ImageTitleContainer = styled.div`
-//   z-index: 1;
-//   color: black;
-//   display: flex;
-//   justify-content: center;
-//   position: absolute;
-//   left: 46%;
-//   top: 60%;
-// `;
 
 const ImageCard = styled.div`
   color: white;

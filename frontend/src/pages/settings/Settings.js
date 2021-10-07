@@ -86,30 +86,28 @@ export default function Settings() {
                       strokeLinejoin="round"
                       strokeLinecap="round"
                       strokeMiterlimit="10"
-                      strokeWidth="0"
+                      strokeWidth="1"
+                      stroke="#265F58"
+                      fill="#85D0CC"
+                      d="M20 13C19.17 12.37 18.13 12 17 12C14.24 12 12 14.24 12 17C12 18.13 12.37 19.17 13 20H5C3.34 20 2 18.66 2 17V5C2 3.34 3.34 2 5 2H17C18.66 2 20 3.34 20 5V13Z"
+                    ></path>
+                    <path
+                      strokeLinejoin="round"
+                      strokeLinecap="round"
+                      strokeMiterlimit="10"
+                      strokeWidth="1"
                       stroke="#265F58"
                       fill="#98EED5"
-                      d="M10 11C12.2091 11 14 9.20914 14 7C14 4.79086 12.2091 3 10 3C7.79086 3 6 4.79086 6 7C6 9.20914 7.79086 11 10 11Z"
-                      transform="translate(2,2)"
+                      d="M12.8401 14.22C12.3101 15.02 12.0001 15.97 12.0001 17C12.0001 18.13 12.3701 19.17 13.0001 20H5.00014C4.41014 20 3.85014 19.83 3.39014 19.53C4.43014 16.32 7.44014 14 11.0001 14C11.6401 14 12.2501 14.07 12.8401 14.22Z"
                     ></path>
                     <path
                       strokeLinejoin="round"
                       strokeLinecap="round"
                       strokeMiterlimit="10"
                       strokeWidth="1"
-                      stroke="#265F58"
-                      fill="none"
-                      d="M10 11C12.2091 11 14 9.20914 14 7C14 4.79086 12.2091 3 10 3C7.79086 3 6 4.79086 6 7C6 9.20914 7.79086 11 10 11Z"
-                    ></path>
-                    <path
-                      strokeLinejoin="round"
-                      strokeLinecap="round"
-                      strokeMiterlimit="10"
-                      strokeWidth="0"
                       stroke="#265F58"
                       fill="#98EED5"
-                      d="M16 21H4C2.9 21 2 20.1 2 19C2 16.24 4.24 14 7 14H13C15.76 14 18 16.24 18 19C18 20.1 17.1 21 16 21Z"
-                      transform="translate(2,2)"
+                      d="M11 11C12.6569 11 14 9.65685 14 8C14 6.34315 12.6569 5 11 5C9.34315 5 8 6.34315 8 8C8 9.65685 9.34315 11 11 11Z"
                     ></path>
                     <path
                       strokeLinejoin="round"
@@ -117,24 +115,22 @@ export default function Settings() {
                       strokeMiterlimit="10"
                       strokeWidth="1"
                       stroke="#265F58"
-                      fill="none"
-                      d="M16 21H4C2.9 21 2 20.1 2 19C2 16.24 4.24 14 7 14H13C15.76 14 18 16.24 18 19C18 20.1 17.1 21 16 21Z"
+                      fill="#85D0CC"
+                      d="M17 22C19.76 22 22 19.76 22 17C22 14.24 19.76 12 17 12C14.24 12 12 14.24 12 17C12 19.76 14.24 22 17 22Z"
                     ></path>
                     <path
                       strokeLinejoin="round"
-                      strokeLinecap="round"
                       strokeMiterlimit="10"
                       strokeWidth="1"
                       stroke="#265F58"
-                      d="M16 11H22"
+                      d="M14 17H20"
                     ></path>
                     <path
                       strokeLinejoin="round"
-                      strokeLinecap="round"
                       strokeMiterlimit="10"
                       strokeWidth="1"
                       stroke="#265F58"
-                      d="M19 8V14"
+                      d="M17 14V20"
                     ></path>
                   </svg>
                 </>
@@ -180,7 +176,7 @@ const Wrapper = styled.div`
 // flex: 9;
 // background-color: rgb(135, 230, 224);
 const SettingsContainer = styled.div`
-  background-color: #adeaeb;
+  background-color: #dcf2f2;
   border-radius: 0.5rem;
   padding: 50px 240px;
   margin-top: 45px;
