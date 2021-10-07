@@ -6,8 +6,6 @@ import { useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../../context/Context';
 
-// import backgroundVideo from '../../components/assets/video3.mp4';
-
 export default function Login() {
   const userRef = useRef();
   const passwordRef = useRef();
@@ -33,22 +31,6 @@ export default function Login() {
   // console.log(user);
   return (
     <Wrapper>
-      {/* <BackgroundVideo>
-        <video
-          autoPlay
-          loop
-          muted
-          style={{
-            height: '120%',
-            width: '100%',
-            zIndex: '-1',
-            position: 'absolute',
-            objectFit: 'cover',
-          }}
-        >
-          <source src={backgroundVideo} type="video/mp4" />
-        </video>
-      </BackgroundVideo> */}
       <LoginForm onSubmit={handleSubmit}>
         <Title>Hello!</Title>
         <SubTitle>Sign into your account here.</SubTitle>
@@ -81,11 +63,11 @@ export default function Login() {
       <BottomTerms>
         By signing in, you agree to our
         <br></br>
-        <a href="#" style={{ color: 'black' }}>
+        <a href="/" style={{ color: 'black' }}>
           Privacy Policy
         </a>
         , and&nbsp;&nbsp;
-        <a href="#" style={{ color: 'black' }}>
+        <a href="/" style={{ color: 'black' }}>
           Terms of Service
         </a>
         .
@@ -95,13 +77,6 @@ export default function Login() {
   );
 }
 
-// height: calc(100vh - 50px);
-// display: flex;
-// flex-direction: column;
-// align-items: center;
-// justify-content: center;
-// background-size: cover;
-// opacity: 0.9;
 const Wrapper = styled.div`
   display: flex;
   height: calc(85vh - 50px);
@@ -109,15 +84,6 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   background-size: cover;
-`;
-// background: url('https://images.pexels.com/photos/2739013/pexels-photo-2739013.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-
-const BackgroundVideo = styled.div`
-  opacity: 1;
-  display: flex;
-  justify-content: center;
-  height: calc(100vh - 50px);
-  z-index: -1;
 `;
 
 const Title = styled.span`

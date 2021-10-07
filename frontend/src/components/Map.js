@@ -262,14 +262,6 @@ const PlaceTitle = styled.h4`
   justify-content: center;
 `;
 
-const ReviewDesc = styled.p`
-  width: max-content;
-  color: black;
-  font-size: 13px;
-  border-bottom: 0.5px solid blue;
-  margin: 3px 0;
-`;
-
 // width: max-content;
 const RatingLabel = styled.p`
   color: black;

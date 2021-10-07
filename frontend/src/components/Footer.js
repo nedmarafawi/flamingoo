@@ -13,26 +13,30 @@ export const Footer = () => {
       <FooterWrap>
         <FooterLinksContainer>
           <FooterLinksWrapper>
-            <FooterLinkItems>
-              <FooterLinkTitle>About Us</FooterLinkTitle>
-              <FooterLink to="/">Who We Are</FooterLink>
-              <FooterLink to="/">Terms of Service</FooterLink>
-            </FooterLinkItems>
-            <FooterLinkItems>
-              <FooterLinkTitle>Customer Care</FooterLinkTitle>
-              <FooterLink to="/">Contact Us</FooterLink>
-            </FooterLinkItems>
-          </FooterLinksWrapper>
-          <FooterLinksWrapper>
-            <FooterLinkItems>
+            {/* <FooterLinkItems>
               <FooterLinkTitle>My Account</FooterLinkTitle>
-              <FooterLink to="/">Profile</FooterLink>
-            </FooterLinkItems>
+              <FooterLinkProfile to="/settings">Profile</FooterLinkProfile>
+            </FooterLinkItems> */}
             <FooterLinkItems>
               <FooterLinkTitle>Social Media</FooterLinkTitle>
-              <FooterLink to="/">Facebook</FooterLink>
-              <FooterLink to="/">Instagram</FooterLink>
-              <FooterLink to="/">Twitter</FooterLink>
+              <FooterLink
+                href="https://www.instagram.com/flamingoo_site/"
+                target="_blank"
+              >
+                Instagram
+              </FooterLink>
+              <FooterLink
+                href="https://twitter.com/FlaminGoo_site"
+                target="_blank"
+              >
+                Twitter
+              </FooterLink>
+              <FooterLink
+                href="https://www.facebook.com/FlaminGoo-108666428255901"
+                target="_blank"
+              >
+                Facebook
+              </FooterLink>
             </FooterLinkItems>
           </FooterLinksWrapper>
         </FooterLinksContainer>
@@ -46,13 +50,22 @@ export const Footer = () => {
               Copyright © {new Date().getFullYear()}. All Rights Reserved{' '}
             </CopyRight>
             <Icons>
-              <IconLink href="/" target="_blank">
+              <IconLink
+                href="https://www.facebook.com/FlaminGoo-108666428255901"
+                target="_blank"
+              >
                 <FaFacebook />
               </IconLink>
-              <IconLink href="/" target="_blank">
+              <IconLink
+                href="https://www.instagram.com/flamingoo_site/"
+                target="_blank"
+              >
                 <FaInstagram />
               </IconLink>
-              <IconLink href="/" target="_blank">
+              <IconLink
+                href="https://twitter.com/FlaminGoo_site"
+                target="_blank"
+              >
                 <FaTwitter />
               </IconLink>
             </Icons>
@@ -120,7 +133,7 @@ const FooterLinkTitle = styled.h1`
   margin-bottom: 16px;
 `;
 
-const FooterLink = styled(Link)`
+const FooterLink = styled.a`
   text-decoration: none;
   margin-bottom: 0.5rem;
   font-size: 14px;
@@ -128,6 +141,18 @@ const FooterLink = styled(Link)`
   transition: 0.3s ease-out;
   &:hover {
     color: gray;
+  }
+`;
+
+const FooterLinkProfile = styled.div`
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  color: #fff;
+  transition: 0.3s ease-out;
+  &:hover {
+    color: gray;
+    cursor: pointer;
   }
 `;
 

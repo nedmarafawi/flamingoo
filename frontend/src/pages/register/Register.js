@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-// import backgroundVideo from '../../components/assets/video4.mp4';
-
 export default function Register() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -28,22 +26,6 @@ export default function Register() {
 
   return (
     <Wrapper>
-      {/* <BackgroundVideo>
-        <video
-          autoPlay
-          loop
-          muted
-          style={{
-            height: '120%',
-            width: '100%',
-            zIndex: '-1',
-            position: 'absolute',
-            objectFit: 'cover',
-          }}
-        >
-          <source src={backgroundVideo} type="video/mp4" />
-        </video>
-      </BackgroundVideo> */}
       <RegisterForm onSubmit={handleSubmit}>
         <Title>
           <i class="fas fa-kiwi-bird"></i>
@@ -82,11 +64,11 @@ export default function Register() {
       <BottomTerms>
         By signing in, you agree to our
         <br></br>
-        <a href="#" style={{ color: 'black' }}>
+        <a href="/" style={{ color: 'black' }}>
           Privacy Policy
         </a>
         , and&nbsp;&nbsp;
-        <a href="#" style={{ color: 'black' }}>
+        <a href="/" style={{ color: 'black' }}>
           Terms of Service
         </a>
         .
@@ -105,24 +87,8 @@ const Wrapper = styled.div`
   background-size: cover;
   no-repeat center fixed;
   `;
-// background: url('https://images.pexels.com/photos/4006534/pexels-photo-4006534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
-
-// const Image = styled.div`
-//   width: 100%;
-//   height: 150%;
-//   object-fit: cover;
-//   z-index: -99;
-//   background: url('https://images.pexels.com/photos/4006534/pexels-photo-4006534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-// `;
 
 // margin-top: -100px;
-const BackgroundVideo = styled.div`
-  opacity: 1;
-  display: flex;
-  justify-content: center;
-  height: calc(100vh - 50px);
-  z-index: -1;
-`;
 
 const Title = styled.span`
   font-size: 50px;
@@ -175,13 +141,6 @@ const PasswordLabel = styled.p`
   margin: 10px 7px;
 `;
 
-// margin-top: 20px;
-// cursor: pointer;
-// background-color: teal;
-// border: none;
-// color: white;
-// border-radius: 10px;
-// padding: 10px;
 const RegisterBtn = styled.button`
   width: 100%;
   padding: 1rem;

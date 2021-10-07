@@ -7,9 +7,7 @@ import axios from 'axios';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 
-import { Footer } from '../../components/Footer';
-
-export default function Home({ post }) {
+export default function Home() {
   const [posts, setPosts] = useState([]);
   const { search } = useLocation();
 
@@ -46,23 +44,12 @@ export default function Home({ post }) {
               <Paragraph>
                 Post your stories, trips and your photos.
                 <br></br>
-                Save your favorite places from your trips.
+                Remember your favorite places from
                 <br></br>
-                Never forget your adventures!
+                your trips. Never forget your adventures!
               </Paragraph>
             </FeatureSubTitle>
           </Link>
-
-          {/* <FeatureSubTitle>
-            <HeaderTitle>Save</HeaderTitle>
-            <Paragraph>
-              Search from millions of locations available
-              <br></br>
-              and pin your travels on your very own digital
-              <br></br>
-              push pin travel map!
-            </Paragraph>
-          </FeatureSubTitle> */}
         </FeaturesContainer>
       </FeatureCenter>
       <Title>Discover The Most Attractive Places</Title>
@@ -112,7 +99,6 @@ export default function Home({ post }) {
         <PostsTitle>Create New Memories Around the World</PostsTitle>
         <Posts posts={posts} />
       </Wrapper>
-      {/* <Footer /> */}
     </>
   );
 }
@@ -214,12 +200,6 @@ const Paragraph = styled.p`
   font-size: 14px;
 `;
 
-const FeatureMap = styled.p`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
 const ImageContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -254,17 +234,6 @@ const ImageOne = styled.img`
     transform: translateY(-8px);
   }
 `;
-// transform: translateY(7%);
-// padding: 0.25rem 0.5rem;
-// border-radius: 1rem;
-// cursor: pointer;
-// overflow: hidden;
-
-// transition: all 0.5s ease 0s;
-
-// &:hover {
-//   transform: scale(1.1);
-// }
 
 const ImageTwo = styled.img`
   width: 17%;
@@ -290,17 +259,6 @@ const ImageTwo = styled.img`
     transform: translateY(-8px);
   }
 `;
-// transform: translateY(3%);
-// padding: 0.55rem 0.55rem;
-// border-radius: 1rem;
-// cursor: pointer;
-// overflow: hidden;
-
-// transition: all 0.5s ease 0s;
-
-// &:hover {
-//   transform: scale(1.1);
-// }
 
 const ImageThree = styled.img`
   width: 10%;
@@ -326,17 +284,6 @@ const ImageThree = styled.img`
     transform: translateY(-8px);
   }
 `;
-// transform: translateY(23%);
-// padding: 0.55rem 0.55rem;
-// border-radius: 1rem;
-// cursor: pointer;
-// overflow: hidden;
-
-// transition: all 0.5s ease 0s;
-
-// &:hover {
-//   transform: scale(1.1);
-// }
 
 const MapContainer = styled.div`
   display: flex;
@@ -359,17 +306,6 @@ const MapTitle = styled.h2`
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-`;
-
-const ImageCard = styled.div`
-  color: white;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-
-  top: 150%;
 `;
 
 const ImageTitleOne = styled.button`

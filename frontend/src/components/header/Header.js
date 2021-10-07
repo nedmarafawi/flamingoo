@@ -6,7 +6,6 @@ export default function Header() {
   return (
     <Wrapper>
       <TitleContainer>
-        {/* <SmallTitle>Stories</SmallTitle> */}
         <LargeTitle>
           FlaminGoo
           <br></br>
@@ -34,10 +33,6 @@ export default function Header() {
           <ExploreButton>Explore</ExploreButton>
         </ExploreContainer>
       </Link>
-      {/* <Image
-        src="https://lp-cms-production.imgix.net/2021-06/The_Colosseum_Rome.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850"
-        alt=""
-      /> */}
     </Wrapper>
   );
 }
@@ -61,13 +56,6 @@ const TitleContainer = styled.div`
   font-weight: 700;
 `;
 
-const SmallTitle = styled.span`
-  position: absolute;
-  top: 17%;
-  left: 10.5%;
-  font-size: 20px;
-`;
-
 const LargeTitle = styled.span`
   position: absolute;
   top: 18%;
@@ -82,8 +70,6 @@ const ExploreContainer = styled.div`
   left: 10.5%;
   position: absolute;
 `;
-// margin-left: 70px;
-// margin-bottom: -400px;
 
 const ExploreButton = styled.button`
   font-size: 21px;
@@ -101,12 +87,3 @@ const ExploreButton = styled.button`
     background-color: #00647d;
   }
 `;
-
-// const Video = styled.video``;
-
-// const Image = styled.img`
-//   width: 100%;
-//   height: 450px;
-//   margin-top: 130px;
-//   object-fit: cover;
-// `;

@@ -11,11 +11,7 @@ export default function Post({ post }) {
           <Image src={publicFolder + post.photo} alt="" />
         </Link>
       )}
-      {/* <img
-        className="postImg"
-        src="https://lh3.googleusercontent.com/proxy/vAOyU3Q7cGAhWVOLvrNXZktU0fcNjVGe3l34UkfgN7yOmP7hGFgNdej6LHqU4zf9f2urA1VPRuIs2Imal6YEUAH0UO1CM-8E34Oy4MfJuuGwOheOXhd-1PKkDOSOrvly"
-        alt=""
-      /> */}
+
       <PostInfo>
         {/* <Categories>
           {post.categories.map((category) => (
@@ -55,7 +51,6 @@ const Wrapper = styled.div`
     transform: translateY(4px);
   }
 `;
-// background-color: #e6961e;
 
 const Image = styled.img`
   width: 100%;
@@ -71,17 +66,17 @@ const PostInfo = styled.div`
   align-items: center;
 `;
 
-const Category = styled.div`
-  font-family: 'Varela Round', sans-serif;
-  font-size: 11px;
-  color: #be9656;
-  line-height: 20px;
-  margin-top: 15px;
-  margin-right: 10px;
-  cursor: pointer;
-`;
+// const Category = styled.div`
+//   font-family: 'Varela Round', sans-serif;
+//   font-size: 11px;
+//   color: #be9656;
+//   line-height: 20px;
+//   margin-top: 15px;
+//   margin-right: 10px;
+//   cursor: pointer;
+// `;
 
-const Categories = styled.div``;
+// const Categories = styled.div``;
 
 const Title = styled.span`
   font-family: 'Josefin Sans', sans-serif;

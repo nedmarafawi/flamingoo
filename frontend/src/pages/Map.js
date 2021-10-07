@@ -125,7 +125,7 @@ const Map = () => {
               <RoomTwoTone
                 style={{
                   fontSize: viewport.zoom * 7,
-                  color: p.username === p.username ? '#F59700' : 'red',
+                  color: p.username ? '#F59700' : 'red',
                   cursor: 'pointer',
                 }}
                 onClick={() => handleMarkerClick(p._id, p.lat, p.long)}
@@ -260,14 +260,6 @@ const PlaceLabel = styled.p`
 const PlaceTitle = styled.h4`
   display: flex;
   justify-content: center;
-`;
-
-const ReviewDesc = styled.p`
-  width: max-content;
-  color: black;
-  font-size: 13px;
-  border-bottom: 0.5px solid blue;
-  margin: 3px 0;
 `;
 
 // width: max-content;
