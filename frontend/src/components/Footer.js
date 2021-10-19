@@ -80,10 +80,11 @@ const FooterContainer = styled.div`
   background-color: #454e51;
   color: #fff;
   position: relative;
+  min-height: 100%;
   left: 0;
-  min-height: 25vh;
   right: 0;
 `;
+// min-height: 25vh;
 // top: 450%;
 
 const FooterWrap = styled.div`

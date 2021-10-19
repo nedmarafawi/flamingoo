@@ -227,9 +227,10 @@ const PostIcon = styled.i`
 
 const PostingInput = styled.input`
   border: none;
+  border-radius: 10px;
   font-size: 30px;
   padding: 10px;
-  width: 100vw;
+  width: 100%;
 
   &:focus {
     outline: none;
@@ -242,10 +243,13 @@ const Text = styled.textarea`
   resize: none;
   font-size: 20px;
   height: 25vh;
-  min-width: 690px;
-  max-width: 100%;
+  // min-width: 505px;
+  // max-width: 100%;
+  width: 100%;
   border: none;
+  border-radius: 10px;
   padding-left: 1em;
+  padding-right: 1em;
   outline: none;
 
   overflow: auto;
@@ -256,7 +260,7 @@ const Text = styled.textarea`
 const Button = styled.button`
   position: absolute;
   top: 110%;
-  left: 87%;
+  left: 83%;
 
   color: white;
   background-color: #0083a3;

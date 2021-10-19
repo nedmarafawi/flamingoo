@@ -385,14 +385,15 @@ const Desc = styled.p`
 // }
 
 const TitleInput = styled.input`
-  padding: 10px;
-  margin-left: 280px;
-
+  padding: 5px;
+  position: relative;
+  left: 30%;
+  width: auto;
   font-family: 'Lora', serif;
   font-size: 28px;
   text-align: center;
   border: none;
-  border-radius: 5px;
+
   color: gray;
   border-bottom: 1px solid lightgray;
 
@@ -405,13 +406,19 @@ const TitleInput = styled.input`
 const DescInput = styled.textarea`
   color: #666;
   font-size: 18px;
-  width: 100%;
+  width: 95%;
   height: 280px;
   line-height: 25px;
   border: none;
   resize: none;
-  border-radius: 5px;
-  padding: 10px 10px 15px 15px;
+
+  // padding: 10px;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 1em;
+
+  border-radius: 10px;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 
   &:focus {
     outline: none;
@@ -420,8 +427,8 @@ const DescInput = styled.textarea`
 
 const Button = styled.button`
   position: absolute;
-  top: 100%;
-  left: 92%;
+  top: 98%;
+  left: 85.8%;
 
   width: 100px;
   border: none;

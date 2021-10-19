@@ -66,7 +66,7 @@ const LargeTitle = styled.span`
 const ExploreContainer = styled.div`
   display: flex;
   justify-content: flex-start;
-  top: 50%;
+  top: 54%;
   left: 10.5%;
   position: absolute;
 `;
