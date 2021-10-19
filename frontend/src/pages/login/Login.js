@@ -34,14 +34,14 @@ export default function Login() {
       <LoginForm onSubmit={handleSubmit}>
         <Title>Hello!</Title>
         <SubTitle>Sign into your account here.</SubTitle>
-        <OuterSpan>
-          <UsernameLabel>Username</UsernameLabel>
-          <LoginInput
-            type="text"
-            placeholder="Enter your username"
-            ref={userRef}
-          />
-        </OuterSpan>
+
+        <UsernameLabel>Username</UsernameLabel>
+        <LoginInput
+          type="text"
+          placeholder="Enter your username"
+          ref={userRef}
+        />
+
         <PasswordLabel>Password</PasswordLabel>
         <LoginInput
           type="password"
@@ -83,7 +83,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-size: cover;
 `;
 
 const Title = styled.span`
