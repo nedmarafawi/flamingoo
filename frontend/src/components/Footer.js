@@ -13,10 +13,24 @@ export const Footer = () => {
       <FooterWrap>
         <FooterLinksContainer>
           <FooterLinksWrapper>
-            {/* <FooterLinkItems>
+            <FooterLinkItems>
               <FooterLinkTitle>My Account</FooterLinkTitle>
-              <FooterLinkProfile to="/settings">Profile</FooterLinkProfile>
-            </FooterLinkItems> */}
+              <FooterLinkProfile>
+                <Link to={`/settings`} className="link">
+                  Profile
+                </Link>
+              </FooterLinkProfile>
+            </FooterLinkItems>
+            <FooterLinkItems>
+              <FooterLinkTitle>About Us</FooterLinkTitle>
+
+              <FooterLink to="/">Who We Are</FooterLink>
+
+              <FooterLink to="/">Terms of Service</FooterLink>
+            </FooterLinkItems>
+          </FooterLinksWrapper>
+
+          <FooterLinksWrapper>
             <FooterLinkItems>
               <FooterLinkTitle>Social Media</FooterLinkTitle>
               <FooterLink
