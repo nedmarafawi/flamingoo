@@ -22,9 +22,9 @@ export const Footer = () => {
               </FooterLinkProfile>
             </FooterLinkItems>
             <FooterLinkItems>
-              <FooterLinkTitle>About Us</FooterLinkTitle>
+              <FooterLinkTitle>About</FooterLinkTitle>
 
-              <FooterLink to="/">Who We Are</FooterLink>
+              <FooterLink to="/">About Us</FooterLink>
 
               <FooterLink to="/">Terms of Service</FooterLink>
             </FooterLinkItems>
