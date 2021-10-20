@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "16.x",
+    "node": "16.11.1",
     "npm": "8.0.0"
 },
+"ng": "ng", 
   "scripts": {
     "start": "nodemon index.js"
   },
