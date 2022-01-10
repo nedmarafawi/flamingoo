@@ -45,12 +45,12 @@ Best souvenir stories from travellers across the world.
 - [x] Data saved on MongoDB.
 - [x] Provide the FE with the required data in a succinct and organized way.
 
-
-
 ### Stretch Goals
 
 - [x] User can edit and delete post(s).
 - [x] Scroll to top of the page.
+- [ ] Create a delete profile button
+- [ ] Create a share button
 
 ## 📊 About the Data
 Here's some of the data from MongoDB.
